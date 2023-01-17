@@ -3,7 +3,8 @@ title: "Rustで真面目にフロントエンド開発ができるのか考え�
 emoji: "🦀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Rust", "フロントエンド開発", "dioxus"]
-published: false
+published: true
+publication_name: "labbase"
 ---
 
 幸運なことに、私は最近バックエンドはほぼ全て Rust で開発しています。一方でフロントエンドは React で開発しているのですが、もし同じく Rust で書けたら Rust 信者の私としてはとても嬉しくないか？と日々思っていました。実はこれは夢ではなく、Rust のプログラムを WebAssembly(WASM)にコンパイルすることで Web ブラウザでも JavaScript から呼び出すことが出来ることからアプリケーション全体を Rust で構築することが可能なのです。そしてそれをサポートするフレームワークも OSS でたくさん出てきています。
