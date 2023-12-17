@@ -13,6 +13,35 @@ published: false
 Houdini は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
 https://houdinigraphql.com/
 
+### セットアップ
+
+すでに SvelteKit を利用している場合は、以下のコマンドで簡単に Houdini を導入できます。
+
+```bash
+$ npx houdini@latest init
+Need to install the following packages:
+houdini@1.2.34
+Ok to proceed? (y) y
+┌  🎩 Welcome to Houdini!
+│
+◇  Will you use a remote GraphQL API?
+│  No
+│
+◇  Where is your schema located?
+│  schema.graphql
+│
+●  Here's what we found: ✨ SvelteKit, 📦 ES Modules, 🟦 TypeScript
+│
+◇  Houdini's files generated ✓
+│
+└  🎉 Everything is ready!
+```
+
+package.json に設定が追加されるので忘れずに`pnpm install`を実行しましょう。
+
+セットアップに関するその他の情報はこちら
+https://houdinigraphql.com/guides/setting-up-your-project
+
 ## おわりに
 
 ところで今年はあまりテックブログを書けませんでしたね、アドカレ以外でも書けるよう来年は頑張ります。
