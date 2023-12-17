@@ -1,17 +1,27 @@
 ---
-title: "Svelteを使ったフロントエンド刷新"
+title: "Houdini+SvelteKitで快適なGraphQL生活を"
 emoji: "🎄"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["frontend", "svelte", "sveltekit", "architecture", "tech"]
+topics: ["frontend", "svelte", "sveltekit", "houdini", "graphql"]
 published: false
 ---
 
-この記事は[LabBase テックカレンダー Advent Calendar 2023](https://qiita.com/advent-calendar/2023/labbase)の 19 日目です。前日の記事は[こちら]。
+この記事は[LabBase テックカレンダー Advent Calendar 2023](https://qiita.com/advent-calendar/2023/labbase)の 19 日目です。
 
 ## はじめに
 
-こんにちは、株式会社 LabBase で SWE やっている上久保です。みんなからはリコピンと呼ばれています。
+Houdini は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
+https://houdinigraphql.com/
 
+## おわりに
+
+ところで今年はあまりテックブログを書けませんでしたね、アドカレ以外でも書けるよう来年は頑張ります。
+明日は私の仕事の発生源で無茶振りの張本人（勿論リスペクトしています）、我らが CTO のアドベントカレンダーです。乞うご期待！
+
+---
+
+<!--
+## 書きたいこと
 皆さんは Svelte 触っていますか？昨年は Rust に熱中していた私ですが、今年はフロントエンドの仕事が多めで 最近では React で書かれたプロダクトの Svelte リプレイスを行うプロジェクトに参加しています。今回は その経緯や Svelte(SvelteKit)を利用したフロントエンドのアーキテクチャと私のこだわりについてまとめてみました。今後仕事で Svelte を導入してみたいと思う皆さんの参考になれば嬉しいです！
 
 :::message
@@ -25,16 +35,6 @@ published: false
 # リプレイスの観点
 
 # アーキテクチャの整備
-
-## おわりに
-
-ところで今年はあまりテックブログを書けませんでしたね、アドカレ以外でも書けるよう来年は頑張ります。
-明日は私の仕事の発生源で無茶振りの張本人（勿論リスペクトしています）、我らが CTO のアドベントカレンダーです。乞うご期待！
-
----
-
-<!--
-## 書きたいこと
 -
   - まず React で書かれた既存コードを見たら様々な問題があった。
   - CI&Lint&Prettier が遅すぎる
