@@ -13,6 +13,10 @@ published: false
 Houdini^[Houdini で調べると 3DCG 作成用のソフトウェアが先に出てきますね。もちろん別物です] は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
 https://houdinigraphql.com/
 
+### サンプルコード
+
+https://github.com/ryu19-1/svelte-houdini-demo
+
 ## セットアップ
 
 すでに SvelteKit を利用している場合は、以下のコマンドで簡単に Houdini を導入できます。
@@ -71,18 +75,27 @@ export default config
 
 package.json に設定が追加されるので忘れずに`pnpm install`を実行しましょう。`pnpm dev`でローカルサーバを立ち上げられたことを確認したら OK
 
+`pnpm dev`を実行することで`/$houdini`というフォルダが自動生成されます。こちらをインポートすることで GraphQL を利用できます。
+
 セットアップに関するその他の情報はこちら
 https://houdinigraphql.com/guides/setting-up-your-project
 
-## (TODO)利用方法
+## 利用方法
+
+生成された graphql クライアントを
 
 ### Query
 
+Query の呼び出し方は様々あり、大きく分けてページ読み込みに同期してローディングが行われる方法と手動で呼び出す方法があります。
+
 ### Mutation
+
+また今回は取り上げませんが、データの Cache, Pagenation などの設定も行うことが出来ます。
 
 ## おまけ
 
 - Mock Service Worker を利用してスキーマ駆動開発
+  https://mswjs.io/
 
 ## おわりに
 
