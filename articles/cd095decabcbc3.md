@@ -10,12 +10,15 @@ published: false
 
 ## はじめに
 
-Houdini は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
+Houdini^[Houdini で調べると 3DCG 作成用のソフトウェアが先に出てきますね。もちろん別物です] は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
 https://houdinigraphql.com/
 
-### セットアップ
+## セットアップ
 
 すでに SvelteKit を利用している場合は、以下のコマンドで簡単に Houdini を導入できます。
+:::message
+今回は Svelte5 `5.0.0-next.25` および SvelteKit2 を使用しています。
+:::
 
 ```bash
 $ npx houdini@latest init
@@ -37,10 +40,41 @@ Ok to proceed? (y) y
 └  🎉 Everything is ready!
 ```
 
-package.json に設定が追加されるので忘れずに`pnpm install`を実行しましょう。
+セットアップの途中で GraphQL スキーマのパスを聞かれるので入力しましょう。今回は以下を用意しました。
+
+```graphql:schema.graphql
+type User {
+  id: Int!
+  name: String!
+}
+
+type Query {
+  users: [User!]!
+}
+```
+
+コマンド実行後`houdini.config.js`というファイルが生成されるので見てみると schema のパスが指定されています。
+
+```js:houdini.config.js
+/// <references types="houdini-svelte">
+
+/** @type {import('houdini').ConfigFile} */
+const config = {
+    "schemaPath": "schema.graphql",
+    "plugins": {
+        "houdini-svelte": {}
+    }
+}
+
+export default config
+```
+
+package.json に設定が追加されるので忘れずに`pnpm install`を実行しましょう。`pnpm dev`でローカルサーバを立ち上げられたことを確認したら OK
 
 セットアップに関するその他の情報はこちら
 https://houdinigraphql.com/guides/setting-up-your-project
+
+## (TODO)利用方法
 
 ## おわりに
 
