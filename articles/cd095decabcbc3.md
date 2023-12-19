@@ -48,20 +48,20 @@ Ok to proceed? (y) y
 
 ```graphql:schema.graphql
 type User {
-	id: Int!
-	name: String!
+  id: Int!
+  name: String!
 }
 
 type Query {
-	users: [User!]!
+  users: [User!]!
 }
 
 input UserInput {
-	name: String!
+  name: String!
 }
 
 type Mutation {
-	addUser(user: UserInput!): User!
+  addUser(user: UserInput!): User!
 }
 ```
 
@@ -95,16 +95,16 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
-	preprocess: vitePreprocess(),
+  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
+  // for more information about preprocessors
+  preprocess: vitePreprocess(),
 
-	kit: {
-		adapter: adapter(),
-		alias: {
-			$houdini: './$houdini',
-		}
-	}
+  kit: {
+    adapter: adapter(),
+    alias: {
+      $houdini: './$houdini',
+    }
+  }
 };
 
 export default config;
@@ -129,10 +129,10 @@ https://houdinigraphql.com/api/query
 
 ```graphql:query.gql
 query GetUsers {
-	users {
-		id
-		name
-	}
+  users {
+    id
+    name
+  }
 }
 ```
 
@@ -144,17 +144,17 @@ import type { PageLoad } from './users/$types';
 import { browser } from '$app/environment';
 
 export const load: PageLoad = async (event) => {
-	if (browser) {
-		const store = new GetUsersStore();
-		const result = await store.fetch({ event });
-		if (result.data?.users) {
-			return {
-				users: result.data.users
-			};
-		} else {
-			throw new Error(result.errors?.join('\n'));
-		}
-	}
+  if (browser) {
+    const store = new GetUsersStore();
+    const result = await store.fetch({ event });
+    if (result.data?.users) {
+      return {
+        users: result.data.users
+      };
+    } else {
+      throw new Error(result.errors?.join('\n'));
+    }
+  }
 };
 ```
 
@@ -162,27 +162,27 @@ Svelte コンポーネントで以下のように呼び出すことが出来ま�
 
 ```
 <script lang="ts">
-	import type { PageData } from './users/$types';
+  import type { PageData } from './users/$types';
 
-	export let data: PageData;
+  export let data: PageData;
 </script>
 
 {#if data.users}
-	<h1>ユーザ一覧</h1>
+  <h1>ユーザ一覧</h1>
 
-	{#each data.users as user}
-		<div class="user-content">
-			<span>ID: {user.id}</span>
-			<span>ユーザ名: {user.name}</span>
-		</div>
-	{/each}
+  {#each data.users as user}
+    <div class="user-content">
+      <span>ID: {user.id}</span>
+      <span>ユーザ名: {user.name}</span>
+    </div>
+  {/each}
 {/if}
 
 <style>
-	.user-content {
-		display: flex;
-		gap: 16px;
-	}
+  .user-content {
+    display: flex;
+    gap: 16px;
+  }
 </style>
 ```
 
@@ -192,9 +192,9 @@ Mutation も同様にファイルを用意して
 
 ```graphql:mutation.gql
 mutation AddUser($user: UserInput!) {
-	addUser(user: $user) {
-		id
-	}
+  addUser(user: $user) {
+    id
+  }
 }
 ```
 
@@ -202,40 +202,40 @@ mutation AddUser($user: UserInput!) {
 
 ```
 <script lang="ts">
-	import { AddUserStore } from '$houdini';
-	import type { PageData } from './$types';
+  import { AddUserStore } from '$houdini';
+  import type { PageData } from './$types';
 
-	export let data: PageData;
+  export let data: PageData;
 
-	const handleClick = async () => {
-		const store = new AddUserStore();
-		const result = await store.mutate({
-			user: {
-				name: 'addUser'
-			}
-		});
-		if (result.data?.addUser) alert('ユーザを追加しました');
-	};
+  const handleClick = async () => {
+    const store = new AddUserStore();
+    const result = await store.mutate({
+      user: {
+        name: 'addUser'
+      }
+    });
+    if (result.data?.addUser) alert('ユーザを追加しました');
+  };
 </script>
 
 {#if data.users}
-	<h1>ユーザ一覧</h1>
+  <h1>ユーザ一覧</h1>
 
-	{#each data.users as user}
-		<div class="user-content">
-			<span>ID: {user.id}</span>
-			<span>ユーザ名: {user.name}</span>
-		</div>
-	{/each}
+  {#each data.users as user}
+    <div class="user-content">
+      <span>ID: {user.id}</span>
+      <span>ユーザ名: {user.name}</span>
+    </div>
+  {/each}
 
-	<button on:click={handleClick}>ユーザー追加</button>
+  <button on:click={handleClick}>ユーザー追加</button>
 {/if}
 
 <style>
-	.user-content {
-		display: flex;
-		gap: 16px;
-	}
+  .user-content {
+    display: flex;
+    gap: 16px;
+  }
 </style>
 ```
 
@@ -261,21 +261,21 @@ pnpm add @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/types
 import type { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-	schema: './schema.graphql',
-	generates: {
-		'./src/mocks/generated/graphql.ts': {
-			plugins: [
-				'typescript',
-				'typescript-operations',
-				'@graphql-codegen/typescript-msw',
-				{
-					'graphql-codegen-typescript-mock-data': {
-						prefix: 'mock'
-					}
-				}
-			]
-		}
-	}
+  schema: './schema.graphql',
+  generates: {
+    './src/mocks/generated/graphql.ts': {
+      plugins: [
+        'typescript',
+        'typescript-operations',
+        '@graphql-codegen/typescript-msw',
+        {
+          'graphql-codegen-typescript-mock-data': {
+            prefix: 'mock'
+          }
+        }
+      ]
+    }
+  }
 };
 
 export default config;
@@ -290,18 +290,18 @@ import { graphql, HttpResponse } from 'msw';
 import { mockUser } from './generated/graphql';
 
 export const handlers = [
-	graphql.query('GetUsers', () => {
-		return HttpResponse.json({
-			data: {
-				users: [...new Array(5).keys()].map((id) =>
-					mockUser({
-						id: id + 1,
-						name: `User${id + 1}`
-					})
-				)
-			}
-		});
-	})
+  graphql.query('GetUsers', () => {
+    return HttpResponse.json({
+      data: {
+        users: [...new Array(5).keys()].map((id) =>
+          mockUser({
+            id: id + 1,
+            name: `User${id + 1}`
+          })
+        )
+      }
+    });
+  })
 ];
 ```
 
@@ -325,9 +325,9 @@ export const server = setupServer(...handlers);
 import { dev } from '$app/environment';
 
 if (dev) {
-	const { worker } = await import('./mocks/browser');
+  const { worker } = await import('./mocks/browser');
 
-	await worker.start({ onUnhandledRequest: 'bypass' });
+  await worker.start({ onUnhandledRequest: 'bypass' });
 }
 ```
 
@@ -335,8 +335,8 @@ if (dev) {
 import { dev } from '$app/environment';
 
 if (dev) {
-	const { server } = await import('./mocks/node');
-	server.listen();
+  const { server } = await import('./mocks/node');
+  server.listen();
 }
 ```
 
