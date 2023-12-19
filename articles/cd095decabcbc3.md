@@ -1,8 +1,8 @@
 ---
-title: "Houdini+SvelteKitで快適なGraphQL生活を"
+title: "Houdini+MSW+SvelteKitで快適なGraphQL生活を"
 emoji: "🎄"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["frontend", "svelte", "sveltekit", "houdini", "graphql"]
+topics: ["svelte", "sveltekit", "houdini", "graphql", "msw"]
 published: false
 ---
 
@@ -244,7 +244,7 @@ mutation AddUser($user: UserInput!) {
 
 https://houdinigraphql.com/api/mutation
 
-## おまけ
+## （おまけ）MSW を利用したモックサーバーの作成
 
 GraphQL の API を利用したフロントエンド開発がしたいけれど、まだ API が出来ていない場合は Mock Service Worker を利用してスキーマから API をモック化してしまうと楽です。
 
