@@ -75,8 +75,8 @@ export default config
 
 package.json に設定が追加されるので忘れずに`pnpm install`を実行しましょう。`pnpm dev`でローカルサーバを立ち上げられたことを確認したら OK
 
-````message alert
-SvelteKitのバージョン2系を使うと、`pnpm dev`でサーバ起動時に以下のようなエラーに遭遇しました。
+:::message alert
+SvelteKit のバージョン 2 系を使うと、`pnpm dev`でサーバ起動時に以下のようなエラーに遭遇しました。
 `SyntaxError: The requested module '@sveltejs/kit/vite' does not provide an export named 'vitePreprocess'`
 
 このエラーを回避するために`vitePreprocess`を`@sveltejs/vite-plugin-svelte`からインポートするように変更しています。
@@ -100,9 +100,9 @@ const config = {
 };
 
 export default config;
-````
-
 ```
+
+:::
 
 `pnpm dev`を実行することで`/$houdini`というフォルダが自動生成されます。こちらをインポートすることで GraphQL を利用できます。
 
@@ -132,4 +132,7 @@ Svelte で MSW を導入する際に参考にした記事
 
 最近仕事で Svelte + GraphQL の開発をしていたので、自分への備忘録を兼ねて記事にまとめました。余談ですが Svelte5 で[Rune](https://svelte.jp/blog/runes)が使えるようになったので state 周りの書き方が大分変わりそうです。この辺りを年末にかけて深掘りしたいと思っています。
 ところで今年はあまりテックブログを書けませんでしたね、アドカレ以外でも書けるよう来年は頑張ります。ではみなさん良いお年を！
+
+```
+
 ```
