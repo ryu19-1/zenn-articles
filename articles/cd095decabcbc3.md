@@ -60,12 +60,8 @@ input UserInput {
 	name: String!
 }
 
-type AddUserResponse {
-	success: Boolean!
-}
-
 type Mutation {
-	addUser(user: UserInput!): AddUserResponse!
+	addUser(user: UserInput!): User!
 }
 ```
 
