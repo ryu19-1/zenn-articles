@@ -6,7 +6,8 @@ topics: ["frontend", "svelte", "sveltekit", "houdini", "graphql"]
 published: false
 ---
 
-この記事は[LabBase テックカレンダー Advent Calendar 2023](https://qiita.com/advent-calendar/2023/labbase)の 19 日目です。
+この記事は LabBase テックカレンダー Advent Calendar 2023 の 19 日目です。
+https://qiita.com/advent-calendar/2023/labbase
 
 ## はじめに
 
