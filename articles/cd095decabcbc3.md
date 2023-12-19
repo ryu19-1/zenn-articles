@@ -3,7 +3,7 @@ title: "Houdini+MSW+SvelteKitで快適なGraphQL生活を"
 emoji: "🎄"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["svelte", "sveltekit", "houdini", "graphql", "msw"]
-published: false
+published: true
 ---
 
 この記事は LabBase テックカレンダー Advent Calendar 2023 の 19 日目です。
@@ -11,7 +11,7 @@ https://qiita.com/advent-calendar/2023/labbase
 
 ## はじめに
 
-Houdini^[Houdini で調べると 3DCG 作成用のソフトウェアが先に出てきますね。もちろん別物です] は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
+Houdini^[Houdini で調べると 3DCG 作成用のソフトウェアが先に出てきますね、もちろん別物です。zenn のタグもこちらの方になってしまっています。] は GraphQL クライアントとして作られた Web アプリケーションフレームワークです。今のところ React と SvelteKit で利用できます。
 https://houdinigraphql.com/
 
 ### サンプルコード
