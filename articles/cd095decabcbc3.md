@@ -4,6 +4,7 @@ emoji: "🎄"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["svelte", "sveltekit", "houdini", "graphql", "msw"]
 published: true
+publication_name: "labbase"
 ---
 
 この記事は LabBase テックカレンダー Advent Calendar 2023 の 19 日目です。
